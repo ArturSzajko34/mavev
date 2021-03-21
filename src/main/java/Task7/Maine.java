@@ -1,6 +1,5 @@
 package Task7;
 
-import Task6.Car;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Maine {
