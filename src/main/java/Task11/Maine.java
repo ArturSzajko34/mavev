@@ -13,5 +13,7 @@ public class Maine {
         ShopService shopService = context.getBean("shopService", ShopService.class);
         shopService.order("Artur", Brand.HTC);
         shopService.order("Jaro", Brand.NOKIA);
+
+        System.out.println(LoggerService.instanceCount);
     }
 }

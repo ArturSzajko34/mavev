@@ -1,9 +1,17 @@
 package Task11;
 
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 
-@Component
+@Scope("prototype")
+@Service
 public class LoggerService {
+
+    public static int instanceCount;
+
+    public LoggerService() {
+        instanceCount++;
+    }
 
 
     public void logInfo(String msg) {
