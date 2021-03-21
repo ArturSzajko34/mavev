@@ -17,6 +17,7 @@ public class CarRentService {
     public CarRentService(CarService carService, UserService userService) {
         this.carService = carService;
         this.userService = userService;
+        System.out.println("CarRentService");
     }
 
 

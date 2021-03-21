@@ -18,6 +18,7 @@ public class Car {
         this.model = model;
         this.productYear = productYear;
         this.idCar = createCarId();
+        System.out.println("Car");
     }
 
 

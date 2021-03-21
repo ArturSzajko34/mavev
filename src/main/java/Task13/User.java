@@ -14,6 +14,7 @@ public class User {
         this.name = name;
         this.age = age;
         this.id = createUserId();
+        System.out.println("User");
     }
 
     private int createUserId(){

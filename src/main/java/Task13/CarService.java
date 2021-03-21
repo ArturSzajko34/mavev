@@ -15,6 +15,7 @@ public class CarService {
     @Autowired
     public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
+        System.out.println("CarService");
     }
 
 

@@ -14,6 +14,5 @@ public class Maine {
         CarRentService carRentService = context.getBean("carRentService", CarRentService.class);
         List<Car> car = carRentService.getCar("Dacia", "Duster", 2020);
         carRentService.rentCar("Artur",car.get(0).getIdCar());
-
     }
 }

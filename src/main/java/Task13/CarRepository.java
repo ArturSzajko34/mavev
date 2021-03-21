@@ -15,6 +15,7 @@ public class CarRepository {
         this.cars = new ArrayList<>();
         cars.add(new Car("Dacia", "Duster",2020));
         cars.add(new Car("Ford","Focus",2000));
+        System.out.println("CarRepository");
     }
 
     public List<Car> getCarList(){
