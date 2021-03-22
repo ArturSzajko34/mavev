@@ -1,6 +1,6 @@
 package Task11;
 
-import org.springframework.stereotype.Component;
+
 
 
 public class User {
