@@ -1,19 +1,15 @@
 package Task7;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
 
-@Component
 public class ShopService {
 
 
     private SmartfoneService smartfoneService;
     private UserService userService;
 
-    @Autowired
     public ShopService(SmartfoneService smartfoneService, UserService userService) {
         this.smartfoneService = smartfoneService;
         this.userService = userService;

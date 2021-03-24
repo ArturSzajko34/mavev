@@ -5,13 +5,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-@Component
+
 public class SmartfoneService {
 
     private final UserRepository userRepository;
     private final SmartphoneRepository smartphoneRepository;
 
-    @Autowired
+
     public SmartfoneService(UserRepository userRepository, SmartphoneRepository smartphoneRepository) {
         this.userRepository = userRepository;
         this.smartphoneRepository = smartphoneRepository;
