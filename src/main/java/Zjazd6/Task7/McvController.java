@@ -11,7 +11,7 @@ public class McvController {
 
 
     @GetMapping("/user")
-    public String helloWorld(@RequestParam(name = "name") String name, @RequestParam(name = "age") Integer age, Model model) {
+    public String helloWorld(@RequestParam(name = "name",required = true) String name, @RequestParam(name = "age",required = false) Integer age, Model model) {
         model.addAttribute("name", name);
         model.addAttribute("age", age);
         return "task7";
