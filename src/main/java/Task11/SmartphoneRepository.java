@@ -14,6 +14,7 @@ public class SmartphoneRepository {
 
     @Autowired
     public SmartphoneRepository(LoggerService loggerService) {
+
         this.loggerService = loggerService;
     }
 
