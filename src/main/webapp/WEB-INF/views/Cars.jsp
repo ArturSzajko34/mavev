@@ -6,6 +6,7 @@
 </head>
 <body><h2> : ${cars.size()}</h2> <c:forEach items="${cars}" var="car">
     <tr>
+        <div>Cars</div>
         <td>Car brand: <c:out value="${car.brand}"/></td>
         <br>
         <td>Car model: <c:out value="${car.model}"/></td>

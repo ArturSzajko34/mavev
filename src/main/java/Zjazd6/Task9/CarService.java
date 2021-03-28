@@ -4,9 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
+
 
 
 @Service
@@ -18,7 +19,8 @@ public class CarService {
 
     public CarService() {
         cars.add(new Car("Dacia", "Duster", 3500));
-        cars.add(new Car("Ford", "Focus", 3500));
+        cars.add(new Car("Ford", "Focus", 5000));
+        cars.add(new Car("Honda", "Civic", 10000));
     }
 
     public List<Car> getCars() {
@@ -30,18 +32,10 @@ public class CarService {
     }
 
 
-    public Car getMax() {
-        Car carsMin = cars.stream()
-                .max(Comparator.comparing(Car::getPrice))
-                .get();
-        return carsMin;
+    public List<Car> getCarForMinMaxPrice (Integer minPrice, Integer maxPrice) {
+     return cars.stream()
+             .filter(car -> minPrice == null || car.getPrice() > minPrice)
+             .filter(car -> minPrice == null || car.getPrice() < maxPrice)
+             .collect(Collectors.toList());
     }
-
-    public Car getMin() {
-        Car carMax = cars.stream()
-                .min(Comparator.comparing(Car::getPrice))
-                .get();
-        return carMax;
-    }
-
 }
