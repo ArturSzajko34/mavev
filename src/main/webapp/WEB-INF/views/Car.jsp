@@ -9,7 +9,7 @@
         <td>${car.model}</td>
     </tr>
     <tr>
-        <td>Model :</td>
+        <td>Price :</td>
         <td>${car.price}</td>
     </tr>
 </table>

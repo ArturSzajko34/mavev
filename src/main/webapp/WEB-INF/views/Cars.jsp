@@ -10,6 +10,8 @@
         <td>Car brand: <c:out value="${car.brand}"/></td>
         <br>
         <td>Car model: <c:out value="${car.model}"/></td>
+        <br>
+        <td>Car price: <c:out value="${car.price}"/></td>
         <br></tr>
     <br> </c:forEach></body>
 </html>

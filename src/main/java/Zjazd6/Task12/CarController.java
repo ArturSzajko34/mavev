@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class CarController {
 
@@ -34,15 +36,6 @@ public class CarController {
         return modelAndView;
     }
 
-
-//    @GetMapping("/cars")
-//    public ModelAndView carsMaxMin(@RequestParam(name = "minPrice", required = false) Integer minPrice, @RequestParam(name = "maxPrice", required = false) Integer maxPrice) {
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("Cars");
-//        modelAndView.addObject("cars", carService.getCarForMinMaxPrice(minPrice, maxPrice));
-//        return modelAndView;
-//    }
-//
     @GetMapping("/car")
     public String car(Model model) {
         model.addAttribute("car", new Car());

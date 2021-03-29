@@ -8,5 +8,9 @@
         <td>Model :</td>
         <td>${car.model}</td>
     </tr>
+    <tr>
+    <td>Price :</td>
+    <td>${car.price}</td>
+    </tr>
 </table>
 </body>

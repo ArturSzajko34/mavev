@@ -13,6 +13,10 @@
             <td><form:input path="model"/></td>
         </tr>
         <tr>
+        <td><form:label path="price">Price</form:label></td>
+        <td><form:input path="price"/></td>
+        </tr>
+        <tr>
             <td><input type="submit" value="Submit"/></td>
         </tr>
     </table>
