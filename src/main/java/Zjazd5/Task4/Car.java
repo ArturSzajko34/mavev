@@ -1,0 +1,14 @@
+package Zjazd5.Task4;
+
+public class Car {
+
+    private Engine engine;
+
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void drive(){
+        engine.engineStart();
+    }
+}
