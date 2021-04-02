@@ -1,6 +1,5 @@
-package Zjazd6.Task13;
+package Zjazd6.Task14;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -33,10 +32,6 @@ public class EmployeeService {
         return userList.stream()
                 .filter(employee -> index == null || employee.getId().equals(index))
                 .findFirst();
-    }
-
-    public void addEmployee(Employee employee){
-        this.userList.add(employee);
     }
 
 }

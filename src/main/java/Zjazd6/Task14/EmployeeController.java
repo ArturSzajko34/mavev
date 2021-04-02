@@ -1,12 +1,13 @@
-package Zjazd6.Task13;
+package Zjazd6.Task14;
 
+import Zjazd6.Task12.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-
+@ControllerAdvice
 @Controller
 public class EmployeeController {
 
@@ -37,17 +38,11 @@ public class EmployeeController {
         return modelAndView;
     }
 
-    @GetMapping("/employee")
-    public String employee(Model model) {
-        model.addAttribute("employee", new Employee());
-        return "EmployeeForm";
+
+    @ExceptionHandler({IllegalArgumentException.class})
+    public String handleException(IllegalArgumentException ex) {
+        ex.printStackTrace();
+        return "ErrorPage";
     }
 
-    @PostMapping("/employee")
-    public String addEmp(@ModelAttribute Employee employee, Model model)
-    {
-        employeeService.addEmployee(employee);
-        model.addAttribute("employee", employee);
-        return "EmployeeResult";
-    }
 }

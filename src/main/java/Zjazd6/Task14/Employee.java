@@ -1,4 +1,4 @@
-package Zjazd6.Task13;
+package Zjazd6.Task14;
 
 public class Employee {
 
@@ -21,9 +21,6 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Employee() {
-    }
-
     public Integer getId() {
         return id;
     }
@@ -40,7 +37,7 @@ public class Employee {
         this.name = name;
     }
 
-    public Integer getSalary() {
+    public int getSalary() {
         return salary;
     }
 
@@ -56,7 +53,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
