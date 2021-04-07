@@ -13,12 +13,15 @@ public class Employee {
     private Gender gender;
 
 
-    public Employee(int id, String name, int salary, int age, Gender gender) {
+    public Employee(Integer id, String name, Integer salary, Integer age, Gender gender) {
         this.id = id;
         this.name = name;
         this.salary = salary;
         this.age = age;
         this.gender = gender;
+    }
+
+    public Employee() {
     }
 
     public Integer getId() {
@@ -37,7 +40,7 @@ public class Employee {
         this.name = name;
     }
 
-    public int getSalary() {
+    public Integer getSalary() {
         return salary;
     }
 
@@ -53,7 +56,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 

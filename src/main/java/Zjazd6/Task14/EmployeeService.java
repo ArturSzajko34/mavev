@@ -28,10 +28,26 @@ public class EmployeeService {
                 .collect(Collectors.toList());
     }
 
-    public Optional<Employee> getEmployeeForId(Integer index) {
-        return userList.stream()
-                .filter(employee -> index == null || employee.getId().equals(index))
-                .findFirst();
+    public Employee findEmployeeForId (Integer index) {
+        return getUserList().stream()
+                .filter(employee -> employee.getId().equals(index))
+                .findFirst()
+                .orElseThrow(()->new EmployeeNotFoundException(index));
     }
 
+    public void addEmployee(Employee newEmployee) {
+        Optional<Employee> employeeOptional = getUserList().stream()
+                .filter(employee-> employee.getId().equals(newEmployee.getId()))
+                .findFirst();
+
+        if(employeeOptional.isPresent()){
+            throw new EmployeeAlreadyExistException(newEmployee.getId());
+        }
+        userList.add(newEmployee);
+
+    }
+
+    public List<Employee> getUserList(){
+        return userList;
+    }
 }

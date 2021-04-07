@@ -1,6 +1,5 @@
 package Zjazd6.Task14;
 
-import Zjazd6.Task12.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,18 +30,26 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/{index}")
-    public ModelAndView getEmployeeFofId(@PathVariable(name = "index") Integer id) {
+    public ModelAndView getEmployeeFofId(@PathVariable(name = "index") Integer id) throws EmployeeNotFoundException {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("Employee");
-        modelAndView.addObject("employee", employeeService.getEmployeeForId(id).get());
+        modelAndView.addObject("employee", employeeService.findEmployeeForId(id));
         return modelAndView;
     }
 
 
-    @ExceptionHandler({IllegalArgumentException.class})
-    public String handleException(IllegalArgumentException ex) {
-        ex.printStackTrace();
-        return "ErrorPage";
+    @GetMapping("/employee")
+    public String employee(Model model) {
+        model.addAttribute("employee", new Employee());
+        return "EmployeeForm";
     }
 
+
+    @PostMapping("/employee")
+    public String addEmployee(@ModelAttribute Employee employee, Model model)
+    {
+        employeeService.addEmployee(employee);
+        model.addAttribute("employee", employee);
+        return "EmployeeResult";
+    }
 }

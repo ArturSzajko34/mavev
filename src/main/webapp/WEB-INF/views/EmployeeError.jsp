@@ -1,3 +1,6 @@
-<body><h2>Employee not found</h2>
-</table>
+<html>
+<head></head>
+<body>
+<h1>Nie znaleziono pracownika o id: ${id}</h1>
 </body>
+</html>
