@@ -15,8 +15,9 @@ public class SmartphoneSerwise {
     @Autowired
     public SmartphoneSerwise() {
 
-        smartphonesList.add(new Smartphone("Nokia", "3310", 15000));
+        smartphonesList.add(new Smartphone("Nokia", "3310", 1000));
         smartphonesList.add(new Smartphone("HTC", "3333", 20000));
+        smartphonesList.add(new Smartphone("Samsung", "1111", 30000));
     }
 
     public Smartphone getSmartphoneByIndex(Integer index) {
@@ -29,8 +30,8 @@ public class SmartphoneSerwise {
 
     public List<Smartphone> findSmartphone(Integer minPrice, Integer maxPrice, String brand, String model){
         return smartphonesList.stream()
-                .filter(smartphone -> maxPrice == null || smartphone.getPrice() <= maxPrice)
                 .filter(smartphone -> minPrice == null || smartphone.getPrice() >= minPrice)
+                .filter(smartphone -> maxPrice == null || smartphone.getPrice() <= maxPrice)
                 .filter(smartphone -> brand == null || smartphone.getBrand().equals(brand))
                 .filter(smartphone -> model == null || smartphone.getModel().equals(model))
                 .collect(Collectors.toList());
