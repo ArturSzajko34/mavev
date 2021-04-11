@@ -7,6 +7,7 @@ name varchar(255)
 
 CREATE TABLE Card
 ( id int primary key AUTO_INCREMENT,
+clientId int,
 cardTypeId varchar(255),
 validFrom timestamp not null,
 validTo timestamp not null
@@ -37,3 +38,6 @@ name varchar(255),
 type  int,
 gymId int
  );
+
+
+ ALTER TABLE card ADD CONSTRAINT fk_card_client_id FOREIGN KEY (clientId) REFERENCES client(id);
