@@ -40,4 +40,19 @@ gymId int
  );
 
 
- ALTER TABLE card ADD CONSTRAINT fk_card_client_id FOREIGN KEY (clientId) REFERENCES client(id);
+ALTER TABLE card ADD CONSTRAINT fk_card_client_id FOREIGN KEY (clientId) REFERENCES client(id);
+
+ALTER TABLE cardtype ADD CONSTRAINT fk_cardtype_card_id FOREIGN KEY (id) REFERENCES card(id);
+
+ALTER TABLE gymcardtype ADD CONSTRAINT fk_gymcardtype_cardtype_id FOREIGN KEY (cardTypeId) REFERENCES cardType(id);
+
+ALTER TABLE gym ADD CONSTRAINT fk_gym_gymCardType_id FOREIGN KEY (id) REFERENCES gymcardtype(gymId);
+
+ALTER TABLE employee ADD CONSTRAINT fk_employee_gym_id FOREIGN KEY (gymId) REFERENCES gym(id);
+
+
+ALTER TABLE gymcardtype
+DROP FOREIGN KEY fk_gymcardtype_cardtype_id;
+
+
+
